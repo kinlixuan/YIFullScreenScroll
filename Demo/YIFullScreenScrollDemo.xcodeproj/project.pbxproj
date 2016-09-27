@@ -21,11 +21,12 @@
 		489EDE971578B436001206A5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489EDE961578B436001206A5 /* SecondViewController.m */; };
 		489EDE991578B436001206A5 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 489EDE981578B436001206A5 /* second.png */; };
 		489EDE9B1578B436001206A5 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 489EDE9A1578B436001206A5 /* second@2x.png */; };
-		5183F26332D340F7B76268DA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B57D9CC7F864504B1072C13 /* libPods.a */; };
+		E86EB587D073DB4BF04F562F /* libPods-YIFullScreenScrollDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A60838FD0B7228B09AAA7F10 /* libPods-YIFullScreenScrollDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B57D9CC7F864504B1072C13 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		224DE1B14FBC981F55426733 /* Pods-YIFullScreenScrollDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YIFullScreenScrollDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YIFullScreenScrollDemo/Pods-YIFullScreenScrollDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		481CF1AB171BF0C900B83CE2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		48965F2C1578B8C2005A393A /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		489EDE751578B435001206A5 /* YIFullScreenScrollDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YIFullScreenScrollDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +48,8 @@
 		489EDE961578B436001206A5 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		489EDE981578B436001206A5 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		489EDE9A1578B436001206A5 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		DE98F8AC5A0549E19C653566 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		66F00692C8B061F64A3C85DB /* Pods-YIFullScreenScrollDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YIFullScreenScrollDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YIFullScreenScrollDemo/Pods-YIFullScreenScrollDemo.release.xcconfig"; sourceTree = "<group>"; };
+		A60838FD0B7228B09AAA7F10 /* libPods-YIFullScreenScrollDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YIFullScreenScrollDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,7 @@
 				489EDE7A1578B435001206A5 /* UIKit.framework in Frameworks */,
 				489EDE7C1578B435001206A5 /* Foundation.framework in Frameworks */,
 				489EDE7E1578B435001206A5 /* CoreGraphics.framework in Frameworks */,
-				5183F26332D340F7B76268DA /* libPods.a in Frameworks */,
+				E86EB587D073DB4BF04F562F /* libPods-YIFullScreenScrollDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +73,7 @@
 				489EDE7F1578B435001206A5 /* YIFullScreenScrollDemo */,
 				489EDE781578B435001206A5 /* Frameworks */,
 				489EDE761578B435001206A5 /* Products */,
-				DE98F8AC5A0549E19C653566 /* Pods.xcconfig */,
+				B4CA3F09AE9930267AFBACE5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +92,7 @@
 				489EDE7B1578B435001206A5 /* Foundation.framework */,
 				489EDE7D1578B435001206A5 /* CoreGraphics.framework */,
 				1B57D9CC7F864504B1072C13 /* libPods.a */,
+				A60838FD0B7228B09AAA7F10 /* libPods-YIFullScreenScrollDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,6 +129,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B4CA3F09AE9930267AFBACE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				224DE1B14FBC981F55426733 /* Pods-YIFullScreenScrollDemo.debug.xcconfig */,
+				66F00692C8B061F64A3C85DB /* Pods-YIFullScreenScrollDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,11 +145,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 489EDE9E1578B436001206A5 /* Build configuration list for PBXNativeTarget "YIFullScreenScrollDemo" */;
 			buildPhases = (
-				3ED03E5F8AAE4BE2B0FA7A95 /* Check Pods Manifest.lock */,
+				3ED03E5F8AAE4BE2B0FA7A95 /* [CP] Check Pods Manifest.lock */,
 				489EDE711578B435001206A5 /* Sources */,
 				489EDE721578B435001206A5 /* Frameworks */,
 				489EDE731578B435001206A5 /* Resources */,
-				CD9C082446054108901EFCA1 /* Copy Pods Resources */,
+				CD9C082446054108901EFCA1 /* [CP] Copy Pods Resources */,
+				B33B1E3109335F3D940E6291 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,8 +167,13 @@
 		489EDE6C1578B435001206A5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Yasuhiro Inami";
+				TargetAttributes = {
+					489EDE741578B435001206A5 = {
+						DevelopmentTeam = 56VBN2L9L4;
+					};
+				};
 			};
 			buildConfigurationList = 489EDE6F1578B435001206A5 /* Build configuration list for PBXProject "YIFullScreenScrollDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -192,33 +210,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3ED03E5F8AAE4BE2B0FA7A95 /* Check Pods Manifest.lock */ = {
+		3ED03E5F8AAE4BE2B0FA7A95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 		};
-		CD9C082446054108901EFCA1 /* Copy Pods Resources */ = {
+		B33B1E3109335F3D940E6291 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YIFullScreenScrollDemo/Pods-YIFullScreenScrollDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD9C082446054108901EFCA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YIFullScreenScrollDemo/Pods-YIFullScreenScrollDemo-resources.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -260,16 +293,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -277,10 +317,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -289,20 +333,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -311,11 +364,14 @@
 		};
 		489EDE9F1578B436001206A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE98F8AC5A0549E19C653566 /* Pods.xcconfig */;
+			baseConfigurationReference = 224DE1B14FBC981F55426733 /* Pods-YIFullScreenScrollDemo.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 56VBN2L9L4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YIFullScreenScrollDemo/YIFullScreenScrollDemo-Prefix.pch";
 				INFOPLIST_FILE = "YIFullScreenScrollDemo/YIFullScreenScrollDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.inamiy.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = YIFullScreenScrollDemo;
 				WRAPPER_EXTENSION = app;
 			};
@@ -323,11 +379,14 @@
 		};
 		489EDEA01578B436001206A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE98F8AC5A0549E19C653566 /* Pods.xcconfig */;
+			baseConfigurationReference = 66F00692C8B061F64A3C85DB /* Pods-YIFullScreenScrollDemo.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 56VBN2L9L4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YIFullScreenScrollDemo/YIFullScreenScrollDemo-Prefix.pch";
 				INFOPLIST_FILE = "YIFullScreenScrollDemo/YIFullScreenScrollDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.inamiy.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = YIFullScreenScrollDemo;
 				WRAPPER_EXTENSION = app;
 			};

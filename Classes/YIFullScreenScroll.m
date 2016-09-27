@@ -12,10 +12,10 @@
 #import "JRSwizzle.h"
 
 #define IS_PORTRAIT             UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)
-#define IS_IOS_AT_LEAST(ver)    ([[[UIDevice currentDevice] systemVersion] compare:ver] != NSOrderedAscending)
+#define IS_IOS_AT_LEAST(ver)    [[UIDevice currentDevice] systemVersion].floatValue > ver
 
 #if defined(__IPHONE_7_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_7_0
-#   define IS_FLAT_DESIGN          IS_IOS_AT_LEAST(@"7.0")
+#   define IS_FLAT_DESIGN          IS_IOS_AT_LEAST(7.0)
 #else
 #   define IS_FLAT_DESIGN          NO
 #endif
@@ -529,9 +529,7 @@ static char __isFullScreenScrollViewKey;
                 // for non-customized title
                 UIColor *titleTextColor = navBar.titleTextAttributes[NSForegroundColorAttributeName] ?: [UIColor blackColor];
                 titleTextColor = [titleTextColor colorWithAlphaComponent:alpha];
-                NSMutableDictionary *titleTextAttributes = [navBar.titleTextAttributes mutableCopy];
-                [titleTextAttributes setObject:titleTextColor forKey:NSForegroundColorAttributeName];
-                [navBar setTitleTextAttributes:titleTextAttributes];
+                [navBar setTitleTextAttributes:@{ NSForegroundColorAttributeName : titleTextColor }];
                 
                 // for customized title
                 if (![_viewController.navigationItem.titleView conformsToProtocol:@protocol(YIFullScreenScrollNoFading)]) {
@@ -577,7 +575,7 @@ static char __isFullScreenScrollViewKey;
     UITabBar* tabBar = self.tabBar;
     BOOL isTabBarExisting = self.isTabBarExisting;
     CGFloat tabBarSuperviewHeight = 0;
-    if (isTabBarExisting) {
+    if (isTabBarExisting && _shouldHideTabBarOnScroll) {
         if ([tabBar.superview.superview isKindOfClass:[UIWindow class]]) {
             tabBarSuperviewHeight = IS_PORTRAIT ? tabBar.superview.height : tabBar.superview.width;
         }
@@ -585,7 +583,7 @@ static char __isFullScreenScrollViewKey;
             tabBarSuperviewHeight = tabBar.superview.height;
         }
         
-        if (canLayoutUIBars && _shouldHideTabBarOnScroll) {
+        if (canLayoutUIBars) {
             tabBar.top = MIN(MAX(tabBar.top+deltaY, tabBarSuperviewHeight-tabBar.height), tabBarSuperviewHeight);
         }
     }
@@ -605,11 +603,8 @@ static char __isFullScreenScrollViewKey;
         if (isToolbarExisting && _shouldHideToolbarOnScroll) {
             insets.bottom += toolbarSuperviewHeight-toolbar.top;
         }
-        if (isTabBarExisting) {
-            // NOTE: don't adjust scrollIndicatorInsets.bottom for iOS6 + not hiding
-            if (IS_FLAT_DESIGN || _shouldHideTabBarOnScroll) {
-                insets.bottom += tabBarSuperviewHeight-tabBar.top;
-            }
+        if (isTabBarExisting && _shouldHideTabBarOnScroll) {
+            insets.bottom += tabBarSuperviewHeight-tabBar.top;
         }
         scrollView.scrollIndicatorInsets = insets;
         
@@ -791,10 +786,19 @@ static char __isFullScreenScrollViewKey;
     // create custom background
     UIImageView* originalBackground = [bar.subviews objectAtIndex:0];
     UIImageView* customBarImageView = nil;
+    UIImage *barImage = nil;
+    if ([originalBackground isKindOfClass:[UIImageView class]]) {
+        barImage = originalBackground.image;
+    } else {
+        barImage = [self getImageFromColor:self.viewController.navigationController.navigationBar.backgroundColor ?: [UIColor whiteColor]];
+    }
     
     // don't create customBarImageView for iOS7 default flat-design
-    if (!IS_FLAT_DESIGN || originalBackground.image) {
-        customBarImageView = [[UIImageView alloc] initWithImage:[originalBackground.image copy]];
+    if (!IS_FLAT_DESIGN) {
+       
+        customBarImageView = [[UIImageView alloc] initWithImage:barImage];
+       
+        
         [bar insertSubview:customBarImageView atIndex:0];
         
         originalBackground.hidden = YES;
@@ -827,6 +831,17 @@ static char __isFullScreenScrollViewKey;
             self.toolbar.hidden = YES;
         }
     }
+}
+
+- (UIImage *)getImageFromColor:(UIColor *)color {
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 - (void)_removeCustomBackgroundOnUIBar:(UIView*)bar
